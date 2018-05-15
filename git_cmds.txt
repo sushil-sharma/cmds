@@ -1,0 +1,184 @@
+https://www.linkedin.com/learning/git-essential-training/using-git-help?u=3322
+
+git config --global user.name "Sushil Sharma"
+git config --global user.email "sharma_aps@hotmail.com"
+git config --global core.editor "notepad++.exe"
+git config --global color.ui true
+
+git config --list
+
+
+$ cd ~
+
+sushilsh@sush11 MINGW64 ~
+$ cat .gitconfig
+[user]
+        name = Sushil Sharma
+        email = sharma_aps@hotmail.com
+[core]
+        editor = notepad++.exe
+[color]
+        ui = true
+
+ ls -la
+
+make changes
+add change
+all files
+git add .
+specific file
+git add file.txt
+
+commit change
+git commit -m "initital commit"
+[master (root-commit) 4ca38ca] initital commit
+ 1 file changed, 24 insertions(+)
+ create mode 100644 git_cmds.txt
+ 
+ after modifying file can add it to staging tree and also commit at same time
+ will commit all modified files
+ git commit -am "satged and committed"
+ 
+ git log
+ 
+ limit number of commits to list
+ git log -n 2
+ git log --since=2018-05-06
+ git log --until=2018-05-06
+ git log --author="Sushil"
+ git log --grep "init"
+ 
+print working dir
+pwd
+
+status between working dir, staging and repo trees
+git status
+
+changes
+git diff
+git diff filename.txt
+
+changes between staged and repo
+git diff --staged
+
+delete file from repo after deleting from working dir
+git rm filename.txt
+running git rm filename.txt before deleting it from explorer will hard delete it and also delete from staging area
+commit to repo
+git commit -m "deleted files"
+
+renaming or files
+can do from explorer and then git add or let git handle
+rename and move are same
+git mv firstfile.txt secondfile.txt
+
+undo changes from working dir from repo - wrong change in editor
+git checkout -- filename.txt
+-- tells git to use current branch
+
+undo change from staging area
+this is done after git commit when want to unstage a file. file in working dir remains same
+git reset HEAD filename.txt
+
+undo change committed - from repo
+last commit can easily be ammended
+commit will still be there - just modified (ammended)
+gir commit --amend -m "any msg"
+
+to undo changes to an older commit have to make new commit
+git checkout 12345 -- filename.txt
+12345 : sha of PREVIOUS commit which had the good file
+check's out the file from commit with sha 12345 and adds it to staging area
+git commit -m "undo commit 12345"
+reverts change from commit 12345
+
+can undo change of any commit in one step
+git revert 98765
+98765: part of sha of commit to revert
+makes new commit which reverts changes of commit with sha 98765
+
+
+undo multiple commits - dangerous
+git reset
+--soft
+does not change staging	index or working dir
+--mixed (default)
+changes staging index to match repo
+does not change working dir
+--hard
+changes staging index and working dir to match repo
+
+git reset --soft 12121
+12121 : sha of any previous commit
+
+Removing untracked files - unnecessary files in working dir not part of project and not added
+git clean
+-n : test
+-f : clean it
+git clean -f
+does not delete files which are staged or committed
+hard delete
+
+.gitignore
+file with list of file one per line
+wildcard also work
+ignore all *.log files except main.log
+*.log
+!main.log
+ingnore all files in subfolder2 with trailing slash
+/subfolder/subfolder2/
+regex
+* ? [aeiou] [0-9]
+comments
+#this is a comment
+.gitignore file itself has to be added and commited to repo
+git commit -am "adding .gitignore"
+
+global ignore
+not stored in any repo
+git config --global core.excludesfile ~/.gitignore_global
+save it in user dir ~
+
+tell git to ignore changes to a tracked file - already committed in repo
+can do
+git rm filename.txt
+but this will also delete file from working dir
+best way
+add filename to .gitignore
+git rm --cached filename.txt
+git commit -m "removed filename from staging index"
+what this does is removes file from index so changes are not tracked
+actual file is still available in repo and working dir
+
+empty folders are not tracked or committed
+to track add an empty file to folders
+.gitignore or .gitkeep
+
+referencing commits
+reference parent
+HEAD^ or 12345^ or master^
+^ means parent of this commit
+grandparent
+HEAD^^
+how many levels up
+HEAD~1 , HEAD~2
+
+
+list of files in repo
+git ls-tree HEAD
+git ls-tree master
+git ls-tree master subfolder/
+git ls-tree master^ subfolder/
+tree: dir
+blob: file
+
+get more details from git log
+list each commit in compact list
+git log --oneline
+only 2 commits
+git log --oneline -2
+git log --since="2018-05-07"
+can use after instead of since and before instead of until
+git log --since="2 weeks ago" --until "3 days ago"
+git log --since="2.weeks" --until "3.days"
+
