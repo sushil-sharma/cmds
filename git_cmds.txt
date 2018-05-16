@@ -182,6 +182,10 @@ can use after instead of since and before instead of until
 git log --since="2 weeks ago" --until "3 days ago"
 git log --since="2.weeks" --until "3.days"
 
+
+=-=-=-=-=
+branches
+=-=-=-=-=
 show branches
 git branch
 
@@ -193,3 +197,23 @@ git checkout new_feature
 
 stitch back to master
 git checkout master
+
+create branch and checkout
+git checkout -b second_branch
+
+show all details in all branches
+git log --graph --decorate --all --oneline
+
+compare branches
+git diff master..second_branch
+different formatting
+git diff --color-words master..second_branch
+
+to see which commits are in branch
+switch to branch and run
+git branch --merged
+will show which branches have all their commits merged with this branch and hence those branches can be saftely deleted
+
+rename branch
+git branch -m new_feature first_branch
+
