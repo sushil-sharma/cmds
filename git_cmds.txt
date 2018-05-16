@@ -190,3 +190,6 @@ git branch new_feature
 
 switch branch
 git checkout new_feature
+
+stitch back to master
+git checkout master
