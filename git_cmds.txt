@@ -217,3 +217,5 @@ will show which branches have all their commits merged with this branch and henc
 rename branch
 git branch -m new_feature first_branch
 
+delete branch
+git branch --d test_branch
