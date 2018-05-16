@@ -182,3 +182,11 @@ can use after instead of since and before instead of until
 git log --since="2 weeks ago" --until "3 days ago"
 git log --since="2.weeks" --until "3.days"
 
+show branches
+git branch
+
+create branch
+git branch new_feature
+
+switch branch
+git checkout new_feature
