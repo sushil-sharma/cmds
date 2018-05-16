@@ -223,7 +223,30 @@ delete with changes
 git branch -D test_branch
 
 Change command prompt
- echo $PS1
+echo $PS1
 
-Save in notepad file .bahs_profile in ~ folder
+Save in notepad file .bash_profile in ~ folder
 export PS1='\w$(__git_ps1 "(%s)") >'
+
+merging branch
+switch to branch which "receives" the changes from branch
+git checkout master
+git merge second_branch
+second_branch changes will be merged into master
+
+stash - temporary storage
+git stash save "stashed stuff"
+
+show stuff in stash
+git stash list
+stash is available in all branches
+git stash show -p stash@{0}
+
+pull items out of stash
+git stash pop stash@{0}
+git stash apply stash@{0}
+pop removes items from stash
+apply leaves copy in stash
+if do not specify stash@{x} then will pull stash@{0}
+
+
