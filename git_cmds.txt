@@ -249,4 +249,32 @@ pop removes items from stash
 apply leaves copy in stash
 if do not specify stash@{x} then will pull stash@{0}
 
+github
+push an existing repository from the command line
+git remote add origin https://github.com/sushil-sharma/cmds.git
+
+push to remote
+git push -u origin master
+-u is to track changes
+
+check remote
+git remote -v
+
+remove remote
+git remote rm origin
+
+see details
+cat .git/config
+
+see remote branches
+git branch -r
+
+see all branches
+git branch -a
+
+clone existing repro
+cd ..
+chang edir to a folder which is not an exiting repro
+git clone https://github.com/sushil-sharma/hello-friend.git
+will create folder automatically
 
