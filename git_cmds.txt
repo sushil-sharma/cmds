@@ -272,9 +272,62 @@ git branch -r
 see all branches
 git branch -a
 
+creates new branch origin/master
+same as any other branch but we cannot checkout
+origin is synced with remote server branch
+we merge changes betwen our master branch and origin/master branch
+
 clone existing repro
 cd ..
 chang edir to a folder which is not an exiting repro
 git clone https://github.com/sushil-sharma/hello-friend.git
 will create folder automatically
+
+git commit -am "new change"
+commits only to local repro - NOT remote
+
+push changes
+git push
+
+git log --oneline
+
+
+fetch changes by someone else
+git fetch origin
+or
+git fetch
+syncs remote and local origin branch - not local master
+have to merge changes between local origin branch to local master
+git merge origin/master
+
+fetch before you work
+fetch before you push
+fetch often
+fetch then merge then push
+
+git pull = git fetch + git merge
+
+checkout branch
+git checkout -b branch1 origin/branch1
+
+delete branch from remote
+git push origin :branch1
+or
+git push origin --delete branch1
+
+collaboration
+add collaborator using github
+collaborator makes a fork in github
+then issues a pull request
+
+alias
+git config --global alias.st "status"
+st = status
+git st
+
+git config --global alias.logg "log --graph --decorate --oneline --abbrev-commit --all"
+git logg
+
+see changes
+cat ../../.gitconfig
 
