@@ -1,0 +1,30 @@
+Terminology 
+Core Concepts 
+	• repo —folder of source files and revision history that resembles a tree 
+	• clone —a local copy of the repo 
+	• commit — a snapshot of your changes at a certain point in time 
+	• branch —a timeline that tracks changes 
+File States 
+	• untracked — New uncommited file that only exists locally 
+	• modified - File is changed 
+	• staged — New Files/FiIe changes are marked to go into local repo at next commit 
+	• committed - File changes are stored in your local repo 
+	• pushed - File is in the remote repo 
+
+
+Git in a nutshell 
+The high level of Git workflow 
+	• You clone the repository to your local machine 
+	• You branch off of an origin branch (like master or LKG) 
+	• You work in a branch 
+	• You commit locally 
+	• You push commits to the remote 
+	• You pull your commits into your origin branch (master or LKG) 
+	• (Through merge or pull request) 
+ Git repositories look like a tree 
+	• Branches diverge and merge back in (most of the time) 
+	• Each branch has a unique history of commits (changes) 
+Git uses merges 
+	• A merge is a joining of two branch histories 
+	• Some merges are squashed 
+Git Commits are the backbone of git
